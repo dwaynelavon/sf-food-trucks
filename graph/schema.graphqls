@@ -1,0 +1,39 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Location {
+    type: String
+    coordinates: [Float]
+}
+
+type FoodTruck {
+    objectId: String
+    applicant: String
+    facilitytype: String
+    cnn: String
+    locationdescription: String
+    address: String
+    blocklot: String
+    block: String
+    lot: String
+    permit: String
+    status: String
+    fooditems: String
+    x: String
+    y: String
+    latitude: String
+    longitude: String
+    schedule: String
+    received: String
+    priorpermit: String
+    expirationdate: String
+    location: Location
+    sourceLat: Float
+    sourceLng: Float
+    sourceDistance: Float
+}
+
+type Query {
+    foodTrucksNearby(lat: Float!, lng: Float!): [FoodTruck!]!
+}
