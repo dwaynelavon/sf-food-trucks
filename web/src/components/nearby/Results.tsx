@@ -8,14 +8,23 @@ interface IProps {
 }
 
 const renderFoodTruckResults = (res: FoodTruck[]) =>
-    res.map(({ applicant, locationDescription, foodItems, sourceDistance }) => (
-        <ResultCard
-            title={applicant!}
-            description={foodItems!}
-            distance={sourceDistance!}
-            location={locationDescription!}
-        />
-    ));
+    res.map(
+        ({
+            applicant,
+            locationDescription,
+            foodItems,
+            objectId,
+            sourceDistance,
+        }) => (
+            <ResultCard
+                key={objectId!}
+                title={applicant!}
+                description={foodItems!}
+                distance={sourceDistance!.toFixed(2)}
+                location={locationDescription!}
+            />
+        )
+    );
 
 const Results = ({ foodTrucks, loading }: IProps) => {
     return (

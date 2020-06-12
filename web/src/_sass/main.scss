@@ -29,5 +29,11 @@ $primary-invert: $pink-invert;
 @import "../../node_modules/bulma/bulma.sass";
 
 .results {
-    min-height: 600px;
+    height: 600px;
+    overflow-y: auto;
+}
+
+.columns {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
 }

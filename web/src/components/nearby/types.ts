@@ -1,8 +1,8 @@
 export type SearchHandler = (lat: number, lng: number) => void;
 
 export type SearchLocation = {
-    lat: number;
-    lng: number;
+    lat?: number;
+    lng?: number;
 };
 
 export interface IReactStandardProps {

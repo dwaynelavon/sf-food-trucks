@@ -1,16 +1,31 @@
-import React, { useState, useCallback } from "react";
+import { useQuery } from "@apollo/react-hooks";
+import React, { useCallback, useState } from "react";
+import { FoodTruck, QueryFoodTrucksNearbyArgs } from "../../generated/graphql";
 import Container from "./Container";
-import SearchBar from "./SearchBar";
-import { SearchHandler, SearchLocation } from "./types";
-import { FoodTruck } from "../../generated/graphql";
 import Results from "./Results";
+import SearchBar from "./SearchBar";
+import { SearchLocation } from "./types";
+import foodTrucksNearbyQuery from "../../graph/foodTrucksNearbyQuery";
 
 interface IProps {}
 
+type QueryResult = {
+    foodTrucksNearby: FoodTruck[];
+};
+
 const NearbySearch = (props: IProps) => {
-    const [location, setLocation] = useState<SearchLocation>();
-    const [foodTrucks, setFoodTrucks] = useState<FoodTruck[]>([]);
-    const [loading, setLoading] = useState<boolean>(false);
+    const [location, setLocation] = useState<SearchLocation>({});
+
+    const { loading, error, data } = useQuery<
+        QueryResult,
+        QueryFoodTrucksNearbyArgs
+    >(foodTrucksNearbyQuery, {
+        skip: !location?.lng || !location.lat,
+        variables: {
+            lat: location?.lat!,
+            lng: location?.lng!,
+        },
+    });
 
     const searchHandler = useCallback(
         (lat: number, lng: number) => {
@@ -22,7 +37,10 @@ const NearbySearch = (props: IProps) => {
     return (
         <Container>
             <SearchBar onSearch={searchHandler} />
-            <Results foodTrucks={foodTrucks} loading={loading} />
+            <Results
+                foodTrucks={data?.foodTrucksNearby || []}
+                loading={loading}
+            />
         </Container>
     );
 };

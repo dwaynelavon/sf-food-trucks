@@ -16,14 +16,14 @@ type FoodTruck struct {
 	Applicant           string `json:"applicant"`
 	Facilitytype        string `json:"facilitytype"`
 	Cnn                 string `json:"cnn"`
-	Locationdescription string `json:"locationdescription"`
+	LocationDescription string `json:"locationDescription"`
 	Address             string `json:"address"`
 	Blocklot            string `json:"blocklot"`
 	Block               string `json:"block"`
 	Lot                 string `json:"lot"`
 	Permit              string `json:"permit"`
 	Status              string `json:"status"`
-	Fooditems           string `json:"fooditems"`
+	FoodItems           string `json:"foodItems"`
 	X                   string `json:"x"`
 	Y                   string `json:"y"`
 	Latitude            string `json:"latitude"`
