@@ -15,3 +15,5 @@
 -   Search by zip code
 -   Interactive map
 -   Exhaustive testing
+-   Responsive design
+-   Form Validation

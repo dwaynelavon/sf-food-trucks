@@ -10,24 +10,24 @@ type Location {
 type FoodTruck {
     objectId: String
     applicant: String
-    facilitytype: String
+    facilityType: String
     cnn: String
-    locationdescription: String
+    locationDescription: String
     address: String
     blocklot: String
     block: String
     lot: String
     permit: String
     status: String
-    fooditems: String
+    foodItems: String
     x: String
     y: String
     latitude: String
     longitude: String
     schedule: String
     received: String
-    priorpermit: String
-    expirationdate: String
+    priorPermit: String
+    expirationDate: String
     location: Location
     sourceLat: Float
     sourceLng: Float

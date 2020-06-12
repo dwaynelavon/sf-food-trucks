@@ -48,17 +48,17 @@ type ComplexityRoot struct {
 		Block               func(childComplexity int) int
 		Blocklot            func(childComplexity int) int
 		Cnn                 func(childComplexity int) int
-		Expirationdate      func(childComplexity int) int
-		Facilitytype        func(childComplexity int) int
-		Fooditems           func(childComplexity int) int
+		ExpirationDate      func(childComplexity int) int
+		FacilityType        func(childComplexity int) int
+		FoodItems           func(childComplexity int) int
 		Latitude            func(childComplexity int) int
 		Location            func(childComplexity int) int
-		Locationdescription func(childComplexity int) int
+		LocationDescription func(childComplexity int) int
 		Longitude           func(childComplexity int) int
 		Lot                 func(childComplexity int) int
 		ObjectID            func(childComplexity int) int
 		Permit              func(childComplexity int) int
-		Priorpermit         func(childComplexity int) int
+		PriorPermit         func(childComplexity int) int
 		Received            func(childComplexity int) int
 		Schedule            func(childComplexity int) int
 		SourceDistance      func(childComplexity int) int
@@ -133,26 +133,26 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.FoodTruck.Cnn(childComplexity), true
 
-	case "FoodTruck.expirationdate":
-		if e.complexity.FoodTruck.Expirationdate == nil {
+	case "FoodTruck.expirationDate":
+		if e.complexity.FoodTruck.ExpirationDate == nil {
 			break
 		}
 
-		return e.complexity.FoodTruck.Expirationdate(childComplexity), true
+		return e.complexity.FoodTruck.ExpirationDate(childComplexity), true
 
-	case "FoodTruck.facilitytype":
-		if e.complexity.FoodTruck.Facilitytype == nil {
+	case "FoodTruck.facilityType":
+		if e.complexity.FoodTruck.FacilityType == nil {
 			break
 		}
 
-		return e.complexity.FoodTruck.Facilitytype(childComplexity), true
+		return e.complexity.FoodTruck.FacilityType(childComplexity), true
 
-	case "FoodTruck.fooditems":
-		if e.complexity.FoodTruck.Fooditems == nil {
+	case "FoodTruck.foodItems":
+		if e.complexity.FoodTruck.FoodItems == nil {
 			break
 		}
 
-		return e.complexity.FoodTruck.Fooditems(childComplexity), true
+		return e.complexity.FoodTruck.FoodItems(childComplexity), true
 
 	case "FoodTruck.latitude":
 		if e.complexity.FoodTruck.Latitude == nil {
@@ -168,12 +168,12 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.FoodTruck.Location(childComplexity), true
 
-	case "FoodTruck.locationdescription":
-		if e.complexity.FoodTruck.Locationdescription == nil {
+	case "FoodTruck.locationDescription":
+		if e.complexity.FoodTruck.LocationDescription == nil {
 			break
 		}
 
-		return e.complexity.FoodTruck.Locationdescription(childComplexity), true
+		return e.complexity.FoodTruck.LocationDescription(childComplexity), true
 
 	case "FoodTruck.longitude":
 		if e.complexity.FoodTruck.Longitude == nil {
@@ -203,12 +203,12 @@ func (e *executableSchema) Complexity(typeName, field string, childComplexity in
 
 		return e.complexity.FoodTruck.Permit(childComplexity), true
 
-	case "FoodTruck.priorpermit":
-		if e.complexity.FoodTruck.Priorpermit == nil {
+	case "FoodTruck.priorPermit":
+		if e.complexity.FoodTruck.PriorPermit == nil {
 			break
 		}
 
-		return e.complexity.FoodTruck.Priorpermit(childComplexity), true
+		return e.complexity.FoodTruck.PriorPermit(childComplexity), true
 
 	case "FoodTruck.received":
 		if e.complexity.FoodTruck.Received == nil {
@@ -354,24 +354,24 @@ type Location {
 type FoodTruck {
     objectId: String
     applicant: String
-    facilitytype: String
+    facilityType: String
     cnn: String
-    locationdescription: String
+    locationDescription: String
     address: String
     blocklot: String
     block: String
     lot: String
     permit: String
     status: String
-    fooditems: String
+    foodItems: String
     x: String
     y: String
     latitude: String
     longitude: String
     schedule: String
     received: String
-    priorpermit: String
-    expirationdate: String
+    priorPermit: String
+    expirationDate: String
     location: Location
     sourceLat: Float
     sourceLng: Float
@@ -523,7 +523,7 @@ func (ec *executionContext) _FoodTruck_applicant(ctx context.Context, field grap
 	return ec.marshalOString2ᚖstring(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) _FoodTruck_facilitytype(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
+func (ec *executionContext) _FoodTruck_facilityType(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
 	defer func() {
 		if r := recover(); r != nil {
 			ec.Error(ctx, ec.Recover(ctx, r))
@@ -540,7 +540,7 @@ func (ec *executionContext) _FoodTruck_facilitytype(ctx context.Context, field g
 	ctx = graphql.WithFieldContext(ctx, fc)
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.Facilitytype, nil
+		return obj.FacilityType, nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -585,7 +585,7 @@ func (ec *executionContext) _FoodTruck_cnn(ctx context.Context, field graphql.Co
 	return ec.marshalOString2ᚖstring(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) _FoodTruck_locationdescription(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
+func (ec *executionContext) _FoodTruck_locationDescription(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
 	defer func() {
 		if r := recover(); r != nil {
 			ec.Error(ctx, ec.Recover(ctx, r))
@@ -602,7 +602,7 @@ func (ec *executionContext) _FoodTruck_locationdescription(ctx context.Context, 
 	ctx = graphql.WithFieldContext(ctx, fc)
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.Locationdescription, nil
+		return obj.LocationDescription, nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -802,7 +802,7 @@ func (ec *executionContext) _FoodTruck_status(ctx context.Context, field graphql
 	return ec.marshalOString2ᚖstring(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) _FoodTruck_fooditems(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
+func (ec *executionContext) _FoodTruck_foodItems(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
 	defer func() {
 		if r := recover(); r != nil {
 			ec.Error(ctx, ec.Recover(ctx, r))
@@ -819,7 +819,7 @@ func (ec *executionContext) _FoodTruck_fooditems(ctx context.Context, field grap
 	ctx = graphql.WithFieldContext(ctx, fc)
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.Fooditems, nil
+		return obj.FoodItems, nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -1019,7 +1019,7 @@ func (ec *executionContext) _FoodTruck_received(ctx context.Context, field graph
 	return ec.marshalOString2ᚖstring(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) _FoodTruck_priorpermit(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
+func (ec *executionContext) _FoodTruck_priorPermit(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
 	defer func() {
 		if r := recover(); r != nil {
 			ec.Error(ctx, ec.Recover(ctx, r))
@@ -1036,7 +1036,7 @@ func (ec *executionContext) _FoodTruck_priorpermit(ctx context.Context, field gr
 	ctx = graphql.WithFieldContext(ctx, fc)
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.Priorpermit, nil
+		return obj.PriorPermit, nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -1050,7 +1050,7 @@ func (ec *executionContext) _FoodTruck_priorpermit(ctx context.Context, field gr
 	return ec.marshalOString2ᚖstring(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) _FoodTruck_expirationdate(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
+func (ec *executionContext) _FoodTruck_expirationDate(ctx context.Context, field graphql.CollectedField, obj *model.FoodTruck) (ret graphql.Marshaler) {
 	defer func() {
 		if r := recover(); r != nil {
 			ec.Error(ctx, ec.Recover(ctx, r))
@@ -1067,7 +1067,7 @@ func (ec *executionContext) _FoodTruck_expirationdate(ctx context.Context, field
 	ctx = graphql.WithFieldContext(ctx, fc)
 	resTmp, err := ec.ResolverMiddleware(ctx, func(rctx context.Context) (interface{}, error) {
 		ctx = rctx // use context from middleware stack in children
-		return obj.Expirationdate, nil
+		return obj.ExpirationDate, nil
 	})
 	if err != nil {
 		ec.Error(ctx, err)
@@ -2455,12 +2455,12 @@ func (ec *executionContext) _FoodTruck(ctx context.Context, sel ast.SelectionSet
 			out.Values[i] = ec._FoodTruck_objectId(ctx, field, obj)
 		case "applicant":
 			out.Values[i] = ec._FoodTruck_applicant(ctx, field, obj)
-		case "facilitytype":
-			out.Values[i] = ec._FoodTruck_facilitytype(ctx, field, obj)
+		case "facilityType":
+			out.Values[i] = ec._FoodTruck_facilityType(ctx, field, obj)
 		case "cnn":
 			out.Values[i] = ec._FoodTruck_cnn(ctx, field, obj)
-		case "locationdescription":
-			out.Values[i] = ec._FoodTruck_locationdescription(ctx, field, obj)
+		case "locationDescription":
+			out.Values[i] = ec._FoodTruck_locationDescription(ctx, field, obj)
 		case "address":
 			out.Values[i] = ec._FoodTruck_address(ctx, field, obj)
 		case "blocklot":
@@ -2473,8 +2473,8 @@ func (ec *executionContext) _FoodTruck(ctx context.Context, sel ast.SelectionSet
 			out.Values[i] = ec._FoodTruck_permit(ctx, field, obj)
 		case "status":
 			out.Values[i] = ec._FoodTruck_status(ctx, field, obj)
-		case "fooditems":
-			out.Values[i] = ec._FoodTruck_fooditems(ctx, field, obj)
+		case "foodItems":
+			out.Values[i] = ec._FoodTruck_foodItems(ctx, field, obj)
 		case "x":
 			out.Values[i] = ec._FoodTruck_x(ctx, field, obj)
 		case "y":
@@ -2487,10 +2487,10 @@ func (ec *executionContext) _FoodTruck(ctx context.Context, sel ast.SelectionSet
 			out.Values[i] = ec._FoodTruck_schedule(ctx, field, obj)
 		case "received":
 			out.Values[i] = ec._FoodTruck_received(ctx, field, obj)
-		case "priorpermit":
-			out.Values[i] = ec._FoodTruck_priorpermit(ctx, field, obj)
-		case "expirationdate":
-			out.Values[i] = ec._FoodTruck_expirationdate(ctx, field, obj)
+		case "priorPermit":
+			out.Values[i] = ec._FoodTruck_priorPermit(ctx, field, obj)
+		case "expirationDate":
+			out.Values[i] = ec._FoodTruck_expirationDate(ctx, field, obj)
 		case "location":
 			out.Values[i] = ec._FoodTruck_location(ctx, field, obj)
 		case "sourceLat":

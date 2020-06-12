@@ -5,24 +5,24 @@ package model
 type FoodTruck struct {
 	ObjectID            *string   `json:"objectId"`
 	Applicant           *string   `json:"applicant"`
-	Facilitytype        *string   `json:"facilitytype"`
+	FacilityType        *string   `json:"facilityType"`
 	Cnn                 *string   `json:"cnn"`
-	Locationdescription *string   `json:"locationdescription"`
+	LocationDescription *string   `json:"locationDescription"`
 	Address             *string   `json:"address"`
 	Blocklot            *string   `json:"blocklot"`
 	Block               *string   `json:"block"`
 	Lot                 *string   `json:"lot"`
 	Permit              *string   `json:"permit"`
 	Status              *string   `json:"status"`
-	Fooditems           *string   `json:"fooditems"`
+	FoodItems           *string   `json:"foodItems"`
 	X                   *string   `json:"x"`
 	Y                   *string   `json:"y"`
 	Latitude            *string   `json:"latitude"`
 	Longitude           *string   `json:"longitude"`
 	Schedule            *string   `json:"schedule"`
 	Received            *string   `json:"received"`
-	Priorpermit         *string   `json:"priorpermit"`
-	Expirationdate      *string   `json:"expirationdate"`
+	PriorPermit         *string   `json:"priorPermit"`
+	ExpirationDate      *string   `json:"expirationDate"`
 	Location            *Location `json:"location"`
 	SourceLat           *float64  `json:"sourceLat"`
 	SourceLng           *float64  `json:"sourceLng"`
