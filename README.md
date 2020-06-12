@@ -15,6 +15,11 @@ I use the current stack of `React/Typescript/Apollo/Golang` a lot in my side pro
 
 I could have very well used a REST API as opposed to GQL but the nature of the data made me instantly think GQL; large data model with only a few fields needed for this particular view.
 
+## Running
+
+-   Server: `go run ./server.go`
+-   Client `cd ./web && yarn && yarn start`
+
 ### Improvements that could be made
 
 -   Cache api calls until the end of the day
