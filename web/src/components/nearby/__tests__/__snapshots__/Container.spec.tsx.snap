@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container should render with children 1`] = `ShallowWrapper {}`;
+
+exports[`Container should render with default props 1`] = `ShallowWrapper {}`;

@@ -1,5 +1,6 @@
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
+
 import React from "react";
 import "./App.css";
 import Navbar from "./components/nav";

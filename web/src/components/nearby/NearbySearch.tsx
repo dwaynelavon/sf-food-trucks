@@ -16,6 +16,9 @@ type QueryResult = {
 const NearbySearch = (props: IProps) => {
     const [location, setLocation] = useState<SearchLocation>({});
 
+    // Get results from the Server
+    // This hook is the reason there are no tests for this component
+    // It's possible to test but it takes some extra work to mock out the ApolloProvider's response
     const { loading, error, data } = useQuery<
         QueryResult,
         QueryFoodTrucksNearbyArgs
